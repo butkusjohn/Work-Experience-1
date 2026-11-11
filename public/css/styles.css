@@ -196,16 +196,11 @@ img {
   background: linear-gradient(135deg, var(--orange) 0%, var(--orange) 50%, var(--white) 50%, var(--white) 100%);
 }
 
-.site-header--home .container {
-  flex-wrap: nowrap;
-}
-
 .site-header--home nav {
   min-width: 0;
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
   gap: 0;
 }
 
@@ -258,7 +253,7 @@ img {
 }
 
 .hero-media {
-  width: 600px;
+  width: min(600px, 55%);
   flex-shrink: 0;
 }
 
@@ -759,6 +754,32 @@ img {
     padding: 64px 0;
   }
 
+  .site-header--home nav {
+    width: 100%;
+  }
+
+  .site-header--home .nav-links {
+    gap: 8px 16px;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin-left: 0;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+
   .feature-row {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -769,7 +790,8 @@ img {
     order: 0;
   }
 
-  .card-grid {
+  .card-grid,
+  .playbook-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -788,7 +810,8 @@ img {
     font-size: 34px;
   }
 
-  .card-grid {
+  .card-grid,
+  .playbook-grid {
     grid-template-columns: 1fr;
   }
 
