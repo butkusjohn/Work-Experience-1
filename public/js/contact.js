@@ -1,8 +1,15 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+const formLoadTime = Date.now();
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
+
+  if (Date.now() - formLoadTime < 500) {
+    statusEl.textContent = 'Please wait a moment before submitting your message.';
+    statusEl.className = 'form-status form-status--error';
+    return;
+  }
 
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;

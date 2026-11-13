@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'public'), { extensions: ['html'] }));
 
 app.post('/contact', (req, res) => {
+  if (req.body.honeypot !== undefined && req.body.honeypot !== '') {
+    return res.status(400).json({ ok: false, error: 'Unable to submit your message.' });
+  }
+
   const name = (req.body.name || '').trim();
   const email = (req.body.email || '').trim();
   const message = (req.body.message || '').trim();
