@@ -21,7 +21,7 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
@@ -258,7 +258,7 @@ img {
 }
 
 .hero-media {
-  width: 600px;
+  width: min(600px, 55%);
   flex-shrink: 0;
 }
 
@@ -406,7 +406,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -746,6 +746,19 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1024px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .hero-media {
+    width: 100%;
+    order: -1;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -757,6 +770,32 @@ img {
 
   .section {
     padding: 64px 0;
+  }
+
+  .site-header--home .container {
+    flex-wrap: wrap;
+  }
+
+  .site-header--home nav {
+    width: 100%;
+  }
+
+  .site-header--home .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  .site-header--home .nav-links li {
+    min-width: auto;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 4px 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin-left: 0;
+    padding: 10px 20px;
   }
 
   .feature-row {
@@ -780,6 +819,12 @@ img {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .playbook-grid {
+    grid-template-columns: 1fr;
   }
 }
 
