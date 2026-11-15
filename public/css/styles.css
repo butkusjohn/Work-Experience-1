@@ -746,6 +746,19 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1024px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .hero-media {
+    width: 100%;
+    order: -1;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -759,14 +772,30 @@ img {
     padding: 64px 0;
   }
 
-  .hero-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 32px;
+  .site-header--home .container {
+    flex-wrap: wrap;
   }
 
-  .hero-media {
+  .site-header--home nav {
     width: 100%;
+  }
+
+  .site-header--home .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  .site-header--home .nav-links li {
+    min-width: auto;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 4px 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin-left: 0;
+    padding: 10px 20px;
   }
 
   .feature-row {
@@ -790,6 +819,12 @@ img {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .playbook-grid {
+    grid-template-columns: 1fr;
   }
 }
 
