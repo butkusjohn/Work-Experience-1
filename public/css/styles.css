@@ -748,7 +748,7 @@ img {
 
 @media (max-width: 1024px) {
   .hero-inner {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: stretch;
     gap: 32px;
   }
@@ -756,6 +756,32 @@ img {
   .hero-media {
     width: 100%;
     order: -1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .page--home .trust-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page--home .feature-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+
+  .page--home .feature-row--reverse .feature-media {
+    order: 0;
+  }
+
+  .page--home .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page--home .cta-body {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -822,8 +848,15 @@ img {
   }
 }
 
-@media (max-width: 550px) {
-  .playbook-grid {
+@media (min-width: 601px) and (max-width: 1000px) {
+  .page--home .playbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid,
+  .page--home .playbook-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -831,10 +864,6 @@ img {
 @media (max-width: 480px) {
   h1 {
     font-size: 34px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
   }
 
   .cta-body {
